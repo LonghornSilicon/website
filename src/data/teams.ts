@@ -33,7 +33,7 @@ export const teams: Team[] = [
     eyebrow: "Physical Design",
     title: "From netlist to GDSII.",
     description:
-      "Floorplanning, place-and-route, timing closure, and DRC/LVS — Sky130 to advanced nodes when the shuttle allows.",
+      "Floorplanning, place-and-route, timing closure, and DRC/LVS — TSMC 16nm and beyond when the shuttle allows.",
     href: "#stats",
     visual: "physical",
   },

@@ -107,9 +107,9 @@ export function Mission() {
             </span>
           </SectionHeading>
           <p className="reveal text-ink-muted mx-auto mb-14 max-w-[640px] text-[clamp(17px,2vw,22px)] leading-relaxed tracking-[-0.012em]">
-            Longhorn Silicon is an undergraduate-led chip design laboratory.
-            From front-end RTL to back-end physical design, we take real
-            projects all the way to fabrication — and the students with them.
+            Longhorn Silicon is an undergraduate-led chip design club. From
+            front-end RTL to back-end physical design, we take real projects
+            all the way to fabrication — and the students with them.
           </p>
         </div>
 
@@ -147,12 +147,12 @@ export function Mission() {
           <BentoCard
             className="reveal min-h-[220px] md:col-span-2 md:col-start-3 md:row-start-3"
             eyebrow="Backend"
-            title="OpenLane · Innovus."
+            title="OpenRoad · Innovus."
           />
           <BentoCard
             className="reveal min-h-[220px] md:col-span-2 md:col-start-5 md:row-start-3"
             eyebrow="Nodes"
-            title="SkyWater · GF · TSMC."
+            title="TSMC 16nm."
           />
         </div>
       </div>

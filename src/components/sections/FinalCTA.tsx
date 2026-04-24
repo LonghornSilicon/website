@@ -21,7 +21,7 @@ export function FinalCTA() {
           variant="inverse"
           size="lg"
         >
-          Email the lab
+          Email the club
         </Button>
         <Button
           href="#mission"

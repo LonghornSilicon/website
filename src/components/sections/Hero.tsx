@@ -1,5 +1,4 @@
 import { Button } from "@/components/primitives/Button";
-import { Eyebrow } from "@/components/primitives/Eyebrow";
 import { ChipDie } from "@/components/visuals/ChipDie";
 import { SITE } from "@/lib/site";
 
@@ -22,15 +21,8 @@ export function Hero() {
       <div className="mx-auto max-w-[1200px] px-6 pt-8 pb-24 md:pt-12 md:pb-32">
         <div className="grid grid-cols-1 items-center gap-14 md:gap-16 lg:grid-cols-[1.05fr_1fr] lg:gap-20">
           <div>
-            <div
-              className="animate-fade-up"
-              style={{ animationDelay: "0.05s" }}
-            >
-              <Eyebrow>Introducing Longhorn Silicon.</Eyebrow>
-            </div>
-
             <h1
-              className="animate-fade-up font-display text-ink mt-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-[5.25rem] lg:leading-[1.02]"
+              className="animate-fade-up font-display text-ink text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-[5.25rem] lg:leading-[1.02]"
               style={{ animationDelay: "0.12s" }}
             >
               Chips,
@@ -50,7 +42,7 @@ export function Hero() {
               className="animate-fade-up text-ink-muted mt-7 max-w-xl text-lg leading-relaxed md:text-xl"
               style={{ animationDelay: "0.2s" }}
             >
-              A student-led silicon design lab at UT Austin — building custom
+              A student-led silicon design club at UT Austin — building custom
               chips from RTL to tapeout.
             </p>
 

@@ -6,6 +6,6 @@ export type Stat = {
 export const stats: Stat[] = [
   { value: "01", label: "Tapeout target" },
   { value: "3", label: "Core teams" },
-  { value: "130", label: "Sky130 (nm)" },
+  { value: "16", label: "TSMC (nm)" },
   { value: "∞", label: "Curiosity" },
 ];

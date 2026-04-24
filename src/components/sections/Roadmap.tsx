@@ -14,7 +14,7 @@ export function Roadmap() {
           <span className="text-ink-muted">No hype, just milestones.</span>
         </SectionHeading>
         <p className="reveal text-ink-muted mx-auto mb-14 max-w-[640px] text-[clamp(17px,2vw,22px)] leading-relaxed tracking-[-0.012em]">
-          From lab charter to packaged parts — a straight line, even when the
+          From club charter to packaged parts — a straight line, even when the
           schedule isn&apos;t.
         </p>
       </div>

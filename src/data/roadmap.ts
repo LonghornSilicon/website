@@ -11,7 +11,7 @@ export const roadmap: Milestone[] = [
   {
     id: "m1",
     phase: "01",
-    title: "Lab charter & tooling",
+    title: "Club charter & tooling",
     description:
       "Repo hygiene, EDA access, and a shared verification methodology so every contributor ships safely.",
     date: "Fall 2024",
