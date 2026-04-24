@@ -1,24 +1,26 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Navigation } from "@/components/layout/Navigation";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
-const inter = Inter({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
   display: "swap",
+  variable: "--font-jakarta",
+  weight: ["400", "500", "600", "700"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  variable: "--font-jetbrains",
   display: "swap",
+  variable: "--font-bricolage",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#fbf6f0",
   width: "device-width",
   initialScale: 1,
 };
@@ -51,13 +53,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable}`}
-    >
+    <html lang="en" className={`${jakarta.variable} ${bricolage.variable}`}>
       <body className="overflow-x-hidden">
         <Navigation />
-        <main id="top">{children}</main>
+        <main id="top" className="pt-16 md:pt-[72px]">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

@@ -1,32 +1,135 @@
+"use client";
+
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import { navLinks } from "@/data/nav";
+import { Button } from "@/components/primitives/Button";
+import { SITE } from "@/lib/site";
 import { cn } from "@/lib/cn";
 
-export function Navigation() {
+function IconMenu() {
   return (
-    <nav
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M4 7h16M4 12h16M4 17h16"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function IconClose() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M6 6l12 12M18 6L6 18"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+export function Navigation() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    if (mobileOpen) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
+  return (
+    <header
       className={cn(
-        "fixed inset-x-0 top-0 z-[1000] h-12 border-b border-white/[0.08]",
-        "bg-black/80 backdrop-blur-xl backdrop-saturate-[180%]",
+        "fixed inset-x-0 top-0 z-50 w-full transition-[background,border-color,backdrop-filter] duration-300",
+        scrolled
+          ? "border-border bg-surface/80 border-b backdrop-blur-md"
+          : "border-b border-transparent bg-transparent",
       )}
     >
-      <div className="mx-auto flex h-full max-w-[1024px] items-center justify-between px-[22px] text-sm text-hero-fg">
-        <a href="#top" className="flex items-center gap-2.5 font-medium tracking-[-0.01em]">
-          <span className="inline-block size-[22px] rounded-sm bg-gradient-to-br from-[#ff7a1a] to-accent" />
-          Longhorn Silicon
-        </a>
-        <ul className="hidden list-none items-center gap-8 md:flex">
+      <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 md:h-[72px]">
+        <Link
+          href="#top"
+          className="flex shrink-0 items-center gap-2.5"
+          aria-label={`${SITE.name} home`}
+        >
+          <span className="to-accent inline-block size-[22px] shrink-0 rounded-sm bg-gradient-to-br from-[#ff7a1a]" />
+          <span className="text-ink text-[15px] font-semibold tracking-tight md:text-base">
+            {SITE.name}
+          </span>
+        </Link>
+
+        <nav className="hidden items-center gap-9 md:flex">
           {navLinks.map((link) => (
-            <li key={link.href + link.label}>
+            <a
+              key={link.href + link.label}
+              href={link.href}
+              className="text-ink/80 hover:text-ink text-sm transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="hidden md:flex md:items-center md:gap-2">
+          <Button
+            href={`mailto:${SITE.contactEmail}`}
+            variant="primary"
+            size="sm"
+          >
+            Contact
+          </Button>
+        </div>
+
+        <button
+          type="button"
+          className="rounded-button border-border text-ink inline-flex h-10 w-10 items-center justify-center border md:hidden"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((v) => !v)}
+        >
+          {mobileOpen ? <IconClose /> : <IconMenu />}
+        </button>
+      </div>
+
+      {mobileOpen ? (
+        <div className="border-border bg-surface border-t md:hidden">
+          <nav className="mx-auto flex max-w-[1200px] flex-col gap-1 px-6 py-6">
+            {navLinks.map((link) => (
               <a
+                key={link.href + link.label}
                 href={link.href}
-                className="text-xs font-normal opacity-[0.88] transition-opacity hover:opacity-100"
+                onClick={() => setMobileOpen(false)}
+                className="text-ink py-3 text-base"
               >
                 {link.label}
               </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </nav>
+            ))}
+            <Button
+              href={`mailto:${SITE.contactEmail}`}
+              variant="primary"
+              size="md"
+              className="mt-4 w-full"
+            >
+              Contact
+            </Button>
+          </nav>
+        </div>
+      ) : null}
+    </header>
   );
 }

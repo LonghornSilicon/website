@@ -1,54 +1,95 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
+import {
+  forwardRef,
+  type AnchorHTMLAttributes,
+  type ButtonHTMLAttributes,
+  type ReactNode,
+  type Ref,
+} from "react";
 import { cn } from "@/lib/cn";
 
-export type ButtonVariant = "primary" | "secondary";
-
-type ButtonProps = {
-  href: string;
-  variant?: ButtonVariant;
-  className?: string;
-  children: ReactNode;
-};
-
-function isNextInternalHref(href: string) {
-  return href.startsWith("/") && !href.startsWith("//");
-}
+type Variant = "primary" | "secondary" | "ghost" | "inverse";
+type Size = "sm" | "md" | "lg";
 
 const base =
-  "group/btn inline-flex items-center gap-1 rounded-full border border-transparent px-[22px] py-3 text-[15px] font-normal tracking-[-0.01em] transition-all duration-[250ms] [transition-timing-function:var(--ease-apple)]";
+  "inline-flex items-center justify-center gap-2 font-medium rounded-button transition-[background,color,border,transform] duration-200 ease-out select-none disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg active:scale-[0.98]";
 
-const variants: Record<ButtonVariant, string> = {
-  primary:
-    "bg-accent text-white hover:scale-[1.02] hover:bg-accent-hover",
-  secondary:
-    "border-white/40 bg-transparent text-hero-fg hover:bg-white/10",
+const sizes: Record<Size, string> = {
+  sm: "h-9 px-4 text-sm",
+  md: "h-11 px-5 text-[0.95rem]",
+  lg: "h-[54px] px-7 text-base",
 };
 
-const arrow = "inline-block transition-transform duration-[250ms] [transition-timing-function:var(--ease-apple)] group-hover/btn:translate-x-[3px]";
+const variants: Record<Variant, string> = {
+  primary:
+    "bg-accent text-white shadow-[0_1px_2px_rgba(0,0,0,0.08)] hover:bg-accent-hover",
+  secondary:
+    "border border-border bg-surface text-ink hover:border-ink/30 hover:bg-bg",
+  ghost: "bg-transparent text-ink hover:bg-accent-light",
+  inverse:
+    "bg-surface text-accent shadow-[0_1px_2px_rgba(0,0,0,0.12)] hover:bg-white/90",
+};
 
-export function Button({
-  href,
-  variant = "primary",
-  className,
-  children,
-}: ButtonProps) {
-  const cls = cn(base, variants[variant], className);
-  const suffix = <span className={arrow}>›</span>;
+type CommonProps = {
+  variant?: Variant;
+  size?: Size;
+  children: ReactNode;
+  className?: string;
+};
 
-  if (isNextInternalHref(href)) {
+type ButtonAsButton = CommonProps &
+  ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined };
+
+type ButtonAsLink = CommonProps &
+  AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
+
+export type ButtonProps = ButtonAsButton | ButtonAsLink;
+
+export const Button = forwardRef<
+  HTMLButtonElement | HTMLAnchorElement,
+  ButtonProps
+>(function Button(
+  { variant = "primary", size = "md", className, children, ...rest },
+  ref,
+) {
+  const classes = cn(base, sizes[size], variants[variant], className);
+
+  if ("href" in rest && rest.href) {
+    const { href, ...anchorRest } = rest as ButtonAsLink;
+    const isInternal = href.startsWith("/") && !href.startsWith("//");
+    if (isInternal) {
+      return (
+        <Link
+          ref={ref as Ref<HTMLAnchorElement>}
+          href={href}
+          className={classes}
+          {...anchorRest}
+        >
+          {children}
+        </Link>
+      );
+    }
     return (
-      <Link href={href} className={cls}>
+      <a
+        ref={ref as Ref<HTMLAnchorElement>}
+        href={href}
+        className={classes}
+        {...anchorRest}
+      >
         {children}
-        {suffix}
-      </Link>
+      </a>
     );
   }
 
   return (
-    <a href={href} className={cls}>
+    <button
+      ref={ref as Ref<HTMLButtonElement>}
+      className={classes}
+      {...(rest as ButtonHTMLAttributes<HTMLButtonElement>)}
+    >
       {children}
-      {suffix}
-    </a>
+    </button>
   );
-}
+});
+
+Button.displayName = "Button";

@@ -1,52 +1,86 @@
 import { Button } from "@/components/primitives/Button";
+import { Eyebrow } from "@/components/primitives/Eyebrow";
 import { ChipDie } from "@/components/visuals/ChipDie";
 import { SITE } from "@/lib/site";
 
 export function Hero() {
   return (
-    <header className="hero-surface">
-      <div className="relative z-[1] max-w-[980px]">
-        <div
-          className="animate-fade-up mb-2 text-[19px] font-normal tracking-[-0.01em] text-accent"
-          style={{ animationDelay: "0.1s" }}
-        >
-          Introducing Longhorn Silicon.
-        </div>
-        <h1
-          className="animate-fade-up mb-5 text-[clamp(48px,9vw,96px)] font-semibold leading-[1.05] tracking-[-0.04em] text-hero-fg"
-          style={{ animationDelay: "0.2s" }}
-        >
-          Chips,{" "}
-          <span className="bg-gradient-to-br from-[#ff7a1a] from-0% via-accent via-50% to-[#7a3900] to-100% bg-clip-text text-transparent">
-            designed at Texas.
-          </span>
-        </h1>
-        <p
-          className="animate-fade-up mx-auto mb-9 max-w-[640px] text-[clamp(19px,2.2vw,24px)] font-normal leading-snug tracking-[-0.012em] text-hero-muted"
-          style={{ animationDelay: "0.35s" }}
-        >
-          A student-led silicon design lab at UT Austin — building custom chips
-          from RTL to tapeout.
-        </p>
-        <div
-          className="animate-fade-up flex flex-wrap justify-center gap-4"
-          style={{ animationDelay: "0.5s" }}
-        >
-          <Button href="#mission" variant="primary">
-            Explore the work
-          </Button>
-          <Button href={`mailto:${SITE.contactEmail}`} variant="secondary">
-            Contact us
-          </Button>
-        </div>
+    <section className="bg-bg relative isolate overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          backgroundImage:
+            "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(191,87,0,0.12), transparent 60%)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="via-border absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent to-transparent"
+      />
 
-        <div
-          className="animate-fade-up mt-[60px]"
-          style={{ animationDelay: "0.7s", animationDuration: "1.2s" }}
-        >
-          <ChipDie />
+      <div className="mx-auto max-w-[1200px] px-6 pt-8 pb-24 md:pt-12 md:pb-32">
+        <div className="grid grid-cols-1 items-center gap-14 md:gap-16 lg:grid-cols-[1.05fr_1fr] lg:gap-20">
+          <div>
+            <div
+              className="animate-fade-up"
+              style={{ animationDelay: "0.05s" }}
+            >
+              <Eyebrow>Introducing Longhorn Silicon.</Eyebrow>
+            </div>
+
+            <h1
+              className="animate-fade-up font-display text-ink mt-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-[5.25rem] lg:leading-[1.02]"
+              style={{ animationDelay: "0.12s" }}
+            >
+              Chips,
+              <br />
+              <span className="relative inline-block">
+                <span className="text-accent relative z-10">
+                  designed at Texas.
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="bg-accent absolute inset-x-0 -bottom-[3px] h-[3px] rounded-full opacity-35 md:-bottom-1 md:h-1"
+                />
+              </span>
+            </h1>
+
+            <p
+              className="animate-fade-up text-ink-muted mt-7 max-w-xl text-lg leading-relaxed md:text-xl"
+              style={{ animationDelay: "0.2s" }}
+            >
+              A student-led silicon design lab at UT Austin — building custom
+              chips from RTL to tapeout.
+            </p>
+
+            <div
+              className="animate-fade-up mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
+              style={{ animationDelay: "0.28s" }}
+            >
+              <Button href="#mission" variant="primary" size="lg">
+                Explore the work
+              </Button>
+              <Button
+                href={`mailto:${SITE.contactEmail}`}
+                variant="ghost"
+                size="lg"
+              >
+                Contact us
+              </Button>
+            </div>
+          </div>
+
+          <div
+            className="animate-fade-up relative"
+            style={{ animationDelay: "0.35s" }}
+          >
+            <div className="rounded-card border-border bg-surface shadow-card border p-6 md:p-8">
+              <ChipDie className="mx-auto w-full max-w-[560px] [filter:drop-shadow(0_12px_32px_rgba(0,0,0,0.08))]" />
+            </div>
+          </div>
         </div>
       </div>
-    </header>
+    </section>
   );
 }

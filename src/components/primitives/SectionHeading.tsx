@@ -15,7 +15,7 @@ export function SectionHeading({
   return (
     <Tag
       className={cn(
-        "mb-5 text-[clamp(36px,5.5vw,64px)] font-semibold leading-[1.08] tracking-[-0.032em]",
+        "font-display mb-5 text-[clamp(36px,5.5vw,64px)] leading-[1.08] font-semibold tracking-[-0.032em]",
         className,
       )}
     >

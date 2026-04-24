@@ -27,43 +27,60 @@ const footerColumns = [
 
 export function Footer() {
   return (
-    <footer className="bg-black px-[22px] pb-8 pt-16 text-[13px] text-hero-muted">
-      <div className="mx-auto grid max-w-[980px] grid-cols-2 gap-10 border-b border-white/10 pb-8 md:grid-cols-[2fr_1fr_1fr_1fr]">
-        <div className="col-span-2 md:col-span-1">
-          <div className="mb-3 flex items-center gap-2 text-[15px] font-medium text-hero-fg">
-            <span className="inline-block size-5 rounded-sm bg-gradient-to-br from-[#ff7a1a] to-accent" />
-            {SITE.name}
+    <footer className="bg-[#141414] px-6 pt-16 pb-8 text-[13px] text-white/60">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+          <div className="max-w-sm">
+            <div className="flex items-center gap-2.5">
+              <span className="to-accent inline-block size-6 shrink-0 rounded-sm bg-gradient-to-br from-[#ff7a1a]" />
+              <span className="font-display text-[17px] font-semibold tracking-tight text-white">
+                {SITE.name}
+              </span>
+            </div>
+            <p className="mt-4 text-sm leading-relaxed text-white/60">
+              {SITE.description}
+            </p>
           </div>
-          <p className="max-w-[320px] leading-relaxed">
-            {SITE.description}
-          </p>
+
+          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 sm:gap-16">
+            {footerColumns.map((col) => (
+              <div key={col.title}>
+                <div className="text-xs tracking-[0.14em] text-white/40 uppercase">
+                  {col.title}
+                </div>
+                <ul className="mt-4 list-none space-y-3 text-sm text-white/80">
+                  {col.links.map((link) => (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        className="transition-colors hover:text-white"
+                        {...(link.href.startsWith("http")
+                          ? { rel: "noopener noreferrer", target: "_blank" }
+                          : {})}
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
-        {footerColumns.map((col) => (
-          <div key={col.title} className="footer-col">
-            <h5 className="mb-3.5 text-[13px] font-medium text-hero-fg">
-              {col.title}
-            </h5>
-            <ul className="list-none">
-              {col.links.map((link) => (
-                <li key={link.href} className="mb-2">
-                  <a
-                    href={link.href}
-                    className="transition-colors hover:text-hero-fg"
-                    {...(link.href.startsWith("http")
-                      ? { rel: "noopener noreferrer", target: "_blank" }
-                      : {})}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+
+        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
+          <span>
+            © {new Date().getFullYear()} {SITE.name}
+          </span>
+          <div className="flex flex-col items-start gap-2 sm:items-end">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 px-3 py-1 tracking-[0.12em] text-white/70 uppercase">
+              Chips, designed at Texas
+            </span>
+            <span className="text-white/45">
+              Built for students, by students.
+            </span>
           </div>
-        ))}
-      </div>
-      <div className="mx-auto mt-8 flex max-w-[980px] flex-wrap items-center justify-between gap-3 text-xs text-hero-muted">
-        <span>© {new Date().getFullYear()} {SITE.name}</span>
-        <span>Built for students, by students.</span>
+        </div>
       </div>
     </footer>
   );
