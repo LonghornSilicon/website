@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #bf5700;
+  --color-accent-hover: #d96a15;
+  --color-ink: #1d1d1f;
+  --color-ink-secondary: #6e6e73;
+  --color-bg-gray: #f5f5f7;
+  --color-bg-gray-2: #fafafa;
+  --color-hero-fg: #f5f5f7;
+  --color-hero-muted: #a1a1a6;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+  --ease-apple: cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white font-sans text-[17px] leading-[1.47] tracking-[-0.022em] text-ink antialiased;
+  }
+
+  img {
+    @apply block max-w-full;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+}
+
+@layer components {
+  .reveal {
+    @apply translate-y-6 opacity-0 transition-[opacity,transform] duration-[900ms];
+    transition-timing-function: var(--ease-apple);
+  }
+
+  .reveal.in {
+    @apply translate-y-0 opacity-100;
+  }
+
+  .hero-surface {
+    @apply relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-black px-[22px] pb-[60px] pt-[120px] text-center text-hero-fg;
+  }
+
+  .hero-surface::before {
+    content: "";
+    @apply pointer-events-none absolute inset-0;
+    background:
+      radial-gradient(ellipse at 20% 30%, rgba(191, 87, 0, 0.18), transparent 50%),
+      radial-gradient(ellipse at 80% 70%, rgba(80, 80, 255, 0.08), transparent 50%);
+  }
+
+  .hero-surface::after {
+    content: "";
+    @apply pointer-events-none absolute inset-0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.9s var(--ease-apple) forwards;
+    opacity: 0;
+  }
+
+  .final-cta-surface {
+    @apply relative overflow-hidden bg-gradient-to-br from-accent to-[#7a3900] px-[22px] py-[140px] text-center text-white;
+  }
+
+  .final-cta-surface::before {
+    content: "";
+    @apply pointer-events-none absolute inset-0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  }
+
+  .team-visual-design {
+    background: radial-gradient(circle at 30% 40%, #2a2a2a 0%, #0a0a0a 70%);
+  }
+
+  .team-visual-verification {
+    background: linear-gradient(135deg, #1a1a2e 0%, #000 100%);
+  }
+
+  .team-visual-physical {
+    background: linear-gradient(135deg, #2a1500 0%, #000 100%);
+  }
+}
