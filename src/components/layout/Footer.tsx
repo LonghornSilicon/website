@@ -13,7 +13,7 @@ const footerColumns = [
     title: "Connect",
     links: [
       { label: "Email", href: `mailto:${SITE.contactEmail}` },
-      { label: "GitHub", href: "https://github.com" },
+      { label: "GitHub", href: "https://github.com/LonghornSilicon" },
     ],
   },
   {
