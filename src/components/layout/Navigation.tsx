@@ -83,11 +83,7 @@ export function Navigation() {
         </nav>
 
         <div className="hidden md:flex md:items-center md:gap-2">
-          <Button
-            href={`mailto:${SITE.contactEmail}`}
-            variant="primary"
-            size="sm"
-          >
+          <Button href="#contact" variant="primary" size="sm">
             Contact
           </Button>
         </div>
@@ -117,10 +113,11 @@ export function Navigation() {
               </a>
             ))}
             <Button
-              href={`mailto:${SITE.contactEmail}`}
+              href="#contact"
               variant="primary"
               size="md"
               className="mt-4 w-full"
+              onClick={() => setMobileOpen(false)}
             >
               Contact
             </Button>

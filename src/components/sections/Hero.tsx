@@ -1,6 +1,5 @@
 import { Button } from "@/components/primitives/Button";
 import { ChipDie } from "@/components/visuals/ChipDie";
-import { SITE } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -53,11 +52,7 @@ export function Hero() {
               <Button href="#mission" variant="primary" size="lg">
                 Explore the work
               </Button>
-              <Button
-                href={`mailto:${SITE.contactEmail}`}
-                variant="ghost"
-                size="lg"
-              >
+              <Button href="#contact" variant="ghost" size="lg">
                 Contact us
               </Button>
             </div>

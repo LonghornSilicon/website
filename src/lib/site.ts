@@ -6,5 +6,5 @@ export const SITE = {
     "https://longhornsilicon.org",
   description:
     "Longhorn Silicon is a student-led chip design club at The University of Texas at Austin. We design, tape out, and bring up custom silicon.",
-  contactEmail: "silicon@utexas.edu",
+  contactEmail: "info@longhornsilicon.com",
 } as const;
