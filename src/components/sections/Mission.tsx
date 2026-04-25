@@ -141,20 +141,19 @@ export function Mission() {
           />
           <div
             className={cn(
-              "reveal rounded-card hover:shadow-elevated border-border bg-bg text-ink shadow-card relative overflow-hidden border p-2 text-left transition-all duration-300 hover:-translate-y-[2px] hover:border-accent/40 md:p-2.5",
+              "reveal rounded-card hover:shadow-elevated border-border bg-bg text-ink shadow-card relative overflow-hidden border p-1 text-left transition-all duration-300 hover:-translate-y-[2px] hover:border-accent/40 md:p-1",
               "md:col-span-6 md:row-start-3",
             )}
           >
-            <div className="text-accent mb-1.5 px-0.5 text-[12px] font-medium tracking-[0.06em] uppercase">
+            <div className="text-accent mb-0.5 px-0.5 text-[12px] font-medium tracking-[0.06em] uppercase">
               Vision
             </div>
-            <div className="bg-bg overflow-hidden rounded-md">
+            <div className="bg-bg relative aspect-[1024/310] w-full overflow-hidden rounded-md">
               <Image
-                src="/brand/lambda-vision.jpg"
+                src="/brand/vision.png"
                 alt="Longhorn Silicon Lambda M.2 module with silver heat spreader and LPDDR DRAM"
-                width={1024}
-                height={289}
-                className="block h-auto w-full object-contain"
+                fill
+                className="object-cover object-center"
                 sizes="(max-width: 768px) 100vw, min(1120px, 100vw)"
               />
             </div>
