@@ -141,14 +141,14 @@ export function Mission() {
           />
           <div
             className={cn(
-              "reveal rounded-card hover:shadow-elevated border-border bg-white text-ink shadow-card relative overflow-hidden border p-2 text-left transition-all duration-300 hover:-translate-y-[2px] hover:border-accent/40 md:p-2.5",
+              "reveal rounded-card hover:shadow-elevated border-border bg-bg text-ink shadow-card relative overflow-hidden border p-2 text-left transition-all duration-300 hover:-translate-y-[2px] hover:border-accent/40 md:p-2.5",
               "md:col-span-6 md:row-start-3",
             )}
           >
             <div className="text-accent mb-1.5 px-0.5 text-[12px] font-medium tracking-[0.06em] uppercase">
               Vision
             </div>
-            <div className="overflow-hidden rounded-md bg-white">
+            <div className="bg-bg overflow-hidden rounded-md">
               <Image
                 src="/brand/lambda-vision.jpg"
                 alt="Longhorn Silicon Lambda M.2 module with silver heat spreader and LPDDR DRAM"
