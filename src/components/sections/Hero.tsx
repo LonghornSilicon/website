@@ -1,4 +1,3 @@
-import { Button } from "@/components/primitives/Button";
 import { ChipDie } from "@/components/visuals/ChipDie";
 
 export function Hero() {
@@ -44,18 +43,6 @@ export function Hero() {
               A student-led silicon design club at UT Austin — building custom
               chips from RTL to tapeout.
             </p>
-
-            <div
-              className="animate-fade-up mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
-              style={{ animationDelay: "0.28s" }}
-            >
-              <Button href="#mission" variant="primary" size="lg">
-                Explore the work
-              </Button>
-              <Button href="#contact" variant="ghost" size="lg">
-                Contact us
-              </Button>
-            </div>
           </div>
 
           <div

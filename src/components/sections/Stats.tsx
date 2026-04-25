@@ -8,9 +8,7 @@ export function Stats() {
       id="stats"
     >
       <div className="mx-auto max-w-[980px] text-center">
-        <SectionHeading className="reveal">
-          By the numbers. <span className="text-ink-muted">(approximate.)</span>
-        </SectionHeading>
+        <SectionHeading className="reveal">By the numbers.</SectionHeading>
         <p className="reveal text-ink-muted mx-auto mb-14 max-w-[640px] text-[clamp(17px,2vw,22px)] leading-relaxed tracking-[-0.012em]">
           We optimize for learning velocity first — then area, timing, and
           power. Metrics below are placeholders until silicon is back from the

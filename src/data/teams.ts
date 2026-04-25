@@ -5,7 +5,6 @@ export type Team = {
   eyebrow: string;
   title: string;
   description: string;
-  href: string;
   visual: TeamVisual;
 };
 
@@ -16,7 +15,6 @@ export const teams: Team[] = [
     title: "RTL & microarchitecture.",
     description:
       "SystemVerilog, IP integration, and power-performance tradeoffs — from block specs to synthesizable RTL.",
-    href: "#mission",
     visual: "design",
   },
   {
@@ -25,7 +23,6 @@ export const teams: Team[] = [
     title: "Signoff you can trust.",
     description:
       "Constrained-random stimulus, coverage-driven closure, and formal checks so tapeout day is boring in the best way.",
-    href: "#roadmap",
     visual: "verification",
   },
   {
@@ -34,7 +31,6 @@ export const teams: Team[] = [
     title: "From netlist to GDSII.",
     description:
       "Floorplanning, place-and-route, timing closure, and DRC/LVS — TSMC 16nm and beyond when the shuttle allows.",
-    href: "#stats",
     visual: "physical",
   },
 ];

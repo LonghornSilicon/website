@@ -61,16 +61,16 @@ export function Navigation() {
           : "border-b border-transparent bg-transparent",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 md:h-[72px]">
+      <div className="relative mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 md:h-[72px]">
         <Link
           href="#top"
-          className="text-ink shrink-0 text-[15px] font-semibold tracking-tight md:text-base"
+          className="text-ink relative z-10 shrink-0 text-[15px] font-semibold tracking-tight md:text-base"
           aria-label={`${SITE.name} home`}
         >
           {SITE.name}
         </Link>
 
-        <nav className="hidden items-center gap-9 md:flex">
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-9 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.href + link.label}
@@ -82,7 +82,7 @@ export function Navigation() {
           ))}
         </nav>
 
-        <div className="hidden md:flex md:items-center md:gap-2">
+        <div className="relative z-10 hidden md:flex md:items-center md:gap-2">
           <Button href="#contact" variant="primary" size="sm">
             Contact
           </Button>

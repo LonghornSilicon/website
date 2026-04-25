@@ -14,8 +14,8 @@ export const roadmap: Milestone[] = [
     title: "Club charter & tooling",
     description:
       "Repo hygiene, EDA access, and a shared verification methodology so every contributor ships safely.",
-    date: "Fall 2024",
-    done: true,
+    date: "Fall 2026",
+    done: false,
   },
   {
     id: "m2",
@@ -23,7 +23,7 @@ export const roadmap: Milestone[] = [
     title: "LHS-01 RTL freeze",
     description:
       "Feature-complete RISC-V SoC with memory hierarchy, peripherals, and DV signoff criteria met.",
-    date: "Spring 2025",
+    date: "Spring 2027",
     done: false,
   },
   {

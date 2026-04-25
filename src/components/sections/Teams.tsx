@@ -111,7 +111,7 @@ export function Teams() {
           <article
             key={team.id}
             className={cn(
-              "group/card reveal rounded-card border-border bg-surface text-ink shadow-card hover:border-accent/40 hover:shadow-elevated flex min-h-[520px] flex-col justify-between border px-9 py-12 text-left transition-all duration-300 hover:-translate-y-[2px]",
+              "group/card reveal rounded-card border-border bg-surface text-ink shadow-card hover:border-accent/40 hover:shadow-elevated flex min-h-[520px] flex-col border px-9 py-12 text-left transition-all duration-300 hover:-translate-y-[2px]",
             )}
           >
             <div>
@@ -126,15 +126,6 @@ export function Teams() {
               </p>
             </div>
             <TeamVisualBlock visual={team.visual} />
-            <a
-              href={team.href}
-              className="text-accent hover:text-accent-hover inline-flex items-center gap-1.5 text-[17px] font-medium transition-colors"
-            >
-              Learn more{" "}
-              <span className="transition-transform group-hover/card:translate-x-0.5">
-                ›
-              </span>
-            </a>
           </article>
         ))}
       </div>

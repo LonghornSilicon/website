@@ -12,14 +12,10 @@ export function Sponsors() {
       id="sponsors"
     >
       <div className="mx-auto max-w-[980px] text-center">
-        <SectionHeading className="reveal">
+        <SectionHeading className="reveal mb-14">
           Partners & platforms.{" "}
           <span className="text-ink-muted">Standing on tall shoulders.</span>
         </SectionHeading>
-        <p className="reveal mx-auto mb-14 max-w-[640px] text-[clamp(17px,2vw,22px)] leading-relaxed tracking-[-0.012em] text-ink-muted">
-          Shuttle programs, PDKs, and university support that make student
-          tapeouts possible.
-        </p>
       </div>
 
       {logos.length > 0 ? (
