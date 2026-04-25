@@ -64,13 +64,10 @@ export function Navigation() {
       <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 md:h-[72px]">
         <Link
           href="#top"
-          className="flex shrink-0 items-center gap-2.5"
+          className="text-ink shrink-0 text-[15px] font-semibold tracking-tight md:text-base"
           aria-label={`${SITE.name} home`}
         >
-          <span className="to-accent inline-block size-[22px] shrink-0 rounded-sm bg-gradient-to-br from-[#ff7a1a]" />
-          <span className="text-ink text-[15px] font-semibold tracking-tight md:text-base">
-            {SITE.name}
-          </span>
+          {SITE.name}
         </Link>
 
         <nav className="hidden items-center gap-9 md:flex">
