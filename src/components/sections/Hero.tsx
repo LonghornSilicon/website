@@ -1,4 +1,4 @@
-import { ChipDie } from "@/components/visuals/ChipDie";
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -50,7 +50,15 @@ export function Hero() {
             style={{ animationDelay: "0.35s" }}
           >
             <div className="rounded-card border-border bg-surface shadow-card border p-6 md:p-8">
-              <ChipDie className="mx-auto w-full max-w-[560px] [filter:drop-shadow(0_12px_32px_rgba(0,0,0,0.08))]" />
+              <Image
+                src="/brand/lambda-lhs.png"
+                alt=""
+                width={3136}
+                height={1374}
+                className="mx-auto h-auto w-full max-w-[560px] [filter:drop-shadow(0_12px_32px_rgba(0,0,0,0.08))]"
+                sizes="(max-width: 1024px) 100vw, 560px"
+                priority
+              />
             </div>
           </div>
         </div>
