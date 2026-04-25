@@ -45,5 +45,5 @@ Environment variables are optional for this static marketing site.
 
 - `src/app/` — routes, layout, global styles, OG image, favicon
 - `src/components/` — layout, sections, primitives, visuals
-- `src/data/` — nav, teams, stats, roadmap, sponsors (content)
+- `src/data/` — nav, roadmap, sponsors (content)
 - `src/lib/` — site constants and `cn()` helper

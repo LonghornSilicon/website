@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Navigation } from "@/components/layout/Navigation";
 import { SITE } from "@/lib/site";
@@ -12,11 +12,11 @@ const jakarta = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
-const bricolage = Bricolage_Grotesque({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-bricolage",
-  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-space-grotesk",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const viewport: Viewport = {
@@ -45,6 +45,10 @@ export const metadata: Metadata = {
     title: `${SITE.name} — Chips, designed at Texas.`,
     description: SITE.description,
   },
+  icons: {
+    icon: "/brand/logo.png",
+    apple: "/brand/logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -53,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${jakarta.variable} ${bricolage.variable}`}>
+    <html lang="en" className={`${jakarta.variable} ${spaceGrotesk.variable}`}>
       <body className="overflow-x-hidden">
         <Navigation />
         <main id="top" className="pt-16 md:pt-[72px]">

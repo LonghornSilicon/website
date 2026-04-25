@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { SectionHeading } from "@/components/primitives/SectionHeading";
 import { cn } from "@/lib/cn";
 
@@ -8,7 +9,7 @@ type BentoCardProps = {
   variant?: BentoVariant;
   eyebrow: string;
   title: ReactNode;
-  description?: string;
+  description?: ReactNode;
   className?: string;
   pattern?: boolean;
 };
@@ -26,7 +27,7 @@ function BentoCard({
   return (
     <div
       className={cn(
-        "rounded-card hover:shadow-elevated relative flex flex-col justify-between overflow-hidden border p-8 text-left transition-all duration-300 hover:-translate-y-[2px]",
+        "rounded-card hover:shadow-elevated relative flex flex-col justify-start overflow-hidden border p-5 text-left transition-all duration-300 hover:-translate-y-[2px]",
         isAccent
           ? "border-accent/20 bg-accent shadow-card hover:border-accent/40 text-white"
           : "border-border bg-bg text-ink shadow-card hover:border-accent/40",
@@ -36,19 +37,19 @@ function BentoCard({
       <div>
         <div
           className={cn(
-            "mb-2 text-[13px] font-medium tracking-[0.06em] uppercase",
+            "mb-2 text-[12px] font-medium tracking-[0.06em] uppercase",
             isAccent ? "text-white/80" : "text-accent",
           )}
         >
           {eyebrow}
         </div>
-        <div className="font-display mb-2 text-[28px] leading-[1.15] font-semibold tracking-[-0.02em]">
+        <div className="font-display mb-2 text-[24px] leading-[1.12] font-semibold tracking-[-0.02em] md:text-[26px]">
           {title}
         </div>
         {description ? (
           <div
             className={cn(
-              "max-w-[380px] text-[15px] leading-snug",
+              "max-w-[360px] text-[14px] leading-relaxed",
               isAccent ? "text-white/80" : "text-ink-muted",
             )}
           >
@@ -58,7 +59,7 @@ function BentoCard({
       </div>
       {pattern && !isAccent ? (
         <svg
-          className="pointer-events-none absolute -right-5 -bottom-5 h-40 w-40 opacity-15"
+          className="pointer-events-none absolute -right-4 -bottom-4 h-32 w-32 opacity-15"
           viewBox="0 0 100 100"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden
@@ -74,7 +75,7 @@ function BentoCard({
       ) : null}
       {pattern && isAccent ? (
         <svg
-          className="pointer-events-none absolute -right-5 -bottom-5 h-40 w-40 opacity-20"
+          className="pointer-events-none absolute -right-4 -bottom-4 h-32 w-32 opacity-20"
           viewBox="0 0 100 100"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden
@@ -100,60 +101,64 @@ export function Mission() {
     >
       <div className="mx-auto max-w-[1200px]">
         <div className="mx-auto max-w-[980px] text-center">
-          <SectionHeading className="reveal text-ink">
+          <SectionHeading className="reveal mb-20 text-ink md:mb-24">
             Silicon is the new frontier.{" "}
             <span className="text-ink-muted">
-              We&apos;re training the people who&apos;ll shape it.
+              We&apos;re training people who&apos;ll shape it.
             </span>
           </SectionHeading>
-          <p className="reveal text-ink-muted mx-auto mb-14 max-w-[640px] text-[clamp(17px,2vw,22px)] leading-relaxed tracking-[-0.012em]">
-            Longhorn Silicon is an undergraduate-led chip design club. From
-            front-end RTL to back-end physical design, we take real projects
-            all the way to fabrication — and the students with them.
-          </p>
         </div>
 
-        <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-4 md:auto-rows-[200px] md:grid-cols-6">
+        <div className="mx-auto grid max-w-[1120px] grid-cols-1 gap-3 md:auto-rows-auto md:grid-cols-6 md:gap-4">
           <BentoCard
             variant="accent"
-            className="reveal min-h-[220px] md:col-span-3 md:row-span-2"
+            className="reveal min-h-[140px] md:col-span-3"
             eyebrow="Flagship"
-            title={
-              <>
-                LHS-01.
-                <br />A RISC-V SoC, from scratch.
-              </>
-            }
-            description="Our first tapeout. Open ISA, custom cache hierarchy, end-to-end verification, all designed on campus."
+            title={<span className="block">Introducing Lambda.</span>}
+            description="Longhorn Accelerator for Matrix-Based Dataflow & Attention. Powering AI models up to 200M parameters"
             pattern
           />
           <BentoCard
-            className="reveal min-h-[220px] md:col-span-3 md:col-start-4 md:row-start-1"
-            eyebrow="Open Source"
-            title="Built in the open."
-            description="RTL, constraints, testbenches — public by default."
-          />
-          <BentoCard
-            className="reveal min-h-[220px] md:col-span-3 md:col-start-4 md:row-start-2"
+            className="reveal min-h-[140px] md:col-span-3 md:col-start-4"
             eyebrow="Tapeout"
             title="Real silicon. Real packages."
-            description="Shuttle runs via Efabless, Tiny Tapeout, and industry partnerships."
+            description="Tapeouts via TSMC University FinFET Program with imec."
           />
           <BentoCard
-            className="reveal min-h-[220px] md:col-span-2 md:col-start-1 md:row-start-3"
-            eyebrow="RTL"
-            title="SystemVerilog."
+            className="reveal min-h-[140px] md:col-span-2 md:col-start-1 md:row-start-2"
+            eyebrow="FRONTEND"
+            title="SystemVerilog · UVM"
           />
           <BentoCard
-            className="reveal min-h-[220px] md:col-span-2 md:col-start-3 md:row-start-3"
+            className="reveal min-h-[140px] md:col-span-2 md:col-start-3 md:row-start-2"
             eyebrow="Backend"
-            title="OpenRoad · Innovus."
+            title="Cadence · Synopsys"
           />
           <BentoCard
-            className="reveal min-h-[220px] md:col-span-2 md:col-start-5 md:row-start-3"
+            className="reveal min-h-[140px] md:col-span-2 md:col-start-5 md:row-start-2"
             eyebrow="Nodes"
-            title="TSMC 16nm."
+            title="TSMC 16nm"
           />
+          <div
+            className={cn(
+              "reveal rounded-card hover:shadow-elevated border-border bg-white text-ink shadow-card relative overflow-hidden border p-2 text-left transition-all duration-300 hover:-translate-y-[2px] hover:border-accent/40 md:p-2.5",
+              "md:col-span-6 md:row-start-3",
+            )}
+          >
+            <div className="text-accent mb-1.5 px-0.5 text-[12px] font-medium tracking-[0.06em] uppercase">
+              Vision
+            </div>
+            <div className="overflow-hidden rounded-md bg-white">
+              <Image
+                src="/brand/lambda-vision.jpg"
+                alt="Longhorn Silicon Lambda M.2 module with silver heat spreader and LPDDR DRAM"
+                width={1024}
+                height={289}
+                className="block h-auto w-full object-contain"
+                sizes="(max-width: 768px) 100vw, min(1120px, 100vw)"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

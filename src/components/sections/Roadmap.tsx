@@ -5,18 +5,14 @@ import { cn } from "@/lib/cn";
 export function Roadmap() {
   return (
     <section
-      className="bg-bg text-ink px-6 py-24 text-center md:py-32"
+      className="bg-bg text-ink px-6 pt-12 pb-24 text-center md:pt-16 md:pb-32"
       id="roadmap"
     >
       <div className="mx-auto max-w-[980px] text-center">
-        <SectionHeading className="reveal">
+        <SectionHeading className="reveal mb-14">
           Roadmap.{" "}
-          <span className="text-ink-muted">No hype, just milestones.</span>
+          <span className="text-ink-muted">From charter to silicon.</span>
         </SectionHeading>
-        <p className="reveal text-ink-muted mx-auto mb-14 max-w-[640px] text-[clamp(17px,2vw,22px)] leading-relaxed tracking-[-0.012em]">
-          From club charter to packaged parts — a straight line, even when the
-          schedule isn&apos;t.
-        </p>
       </div>
 
       <div className="relative mx-auto max-w-[880px] text-left">
