@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Button } from "@/components/primitives/Button";
 
 export function Hero() {
   return (
@@ -43,20 +44,34 @@ export function Hero() {
               A student-led silicon design club at UT Austin — building custom
               chips from RTL to tapeout.
             </p>
+            <div
+              className="animate-fade-up mt-8"
+              style={{ animationDelay: "0.26s" }}
+            >
+              <Button
+                href="https://github.com/LonghornSilicon/"
+                variant="primary"
+                size="lg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Check us out
+              </Button>
+            </div>
           </div>
 
           <div
             className="animate-fade-up relative"
             style={{ animationDelay: "0.35s" }}
           >
-            <div className="rounded-card border-border bg-surface shadow-card border p-6 md:p-8">
+            <div className="rounded-card border-border bg-surface shadow-card mx-auto flex aspect-square w-full max-w-[min(100%,392px)] items-center justify-center border p-5 sm:max-w-[412px] sm:p-6 md:max-w-[432px] md:p-7">
               <Image
-                src="/brand/lambda-lhs.png"
+                src="/brand/lambda.png"
                 alt=""
-                width={3136}
-                height={1374}
-                className="mx-auto h-auto w-full max-w-[560px] [filter:drop-shadow(0_12px_32px_rgba(0,0,0,0.08))]"
-                sizes="(max-width: 1024px) 100vw, 560px"
+                width={1024}
+                height={1022}
+                className="max-h-[91%] max-w-[91%] object-contain [filter:drop-shadow(0_12px_32px_rgba(0,0,0,0.08))]"
+                sizes="(max-width: 1024px) 92vw, 432px"
                 priority
               />
             </div>
