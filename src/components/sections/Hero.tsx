@@ -30,7 +30,7 @@ export function Hero() {
           className="animate-fade-up text-ink-muted mx-auto mt-7 max-w-xl text-center text-lg leading-relaxed md:mt-8 md:text-xl"
           style={{ animationDelay: "0.2s" }}
         >
-          A student silicon club at UT Austin. Building an AI inference
+          First student silicon club at UT Austin. Building an AI inference
           accelerator on TSMC 16nm.
         </p>
 
