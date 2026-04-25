@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { navLinks } from "@/data/nav";
@@ -65,17 +64,10 @@ export function Navigation() {
       <div className="relative mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 md:h-[72px]">
         <Link
           href="#top"
-          className="text-ink relative z-10 flex shrink-0 items-center"
+          className="text-ink relative z-10 shrink-0 text-[15px] font-semibold tracking-tight md:text-base"
           aria-label={`${SITE.name} home`}
         >
-          <Image
-            src="/brand/lhs-logo.png"
-            alt=""
-            width={709}
-            height={619}
-            className="h-7 w-auto md:h-9"
-            priority
-          />
+          {SITE.name}
         </Link>
 
         <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-9 md:flex">
