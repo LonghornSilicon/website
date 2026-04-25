@@ -150,7 +150,7 @@ export function Mission() {
             </div>
             <div className="bg-bg relative aspect-[1024/310] w-full overflow-hidden rounded-md">
               <Image
-                src="/brand/vision.png"
+                src="/brand/pcie-vision2.png"
                 alt="Longhorn Silicon Lambda M.2 module with silver heat spreader and LPDDR DRAM"
                 fill
                 className="object-cover object-center"
