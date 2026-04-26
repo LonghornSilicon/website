@@ -145,7 +145,7 @@ export function Mission() {
               "md:col-span-6 md:row-start-3",
             )}
           >
-            <div className="text-accent mb-0.5 px-0.5 text-[12px] font-medium tracking-[0.06em] uppercase">
+            <div className="text-accent mb-0.5 pt-4 pl-4 text-[12px] font-medium tracking-[0.06em] uppercase">
               Vision
             </div>
             <div className="bg-bg relative aspect-[1024/310] w-full overflow-hidden rounded-md">

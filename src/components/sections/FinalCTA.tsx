@@ -18,7 +18,12 @@ export function FinalCTA() {
         plus industry partners and faculty willing to support.
       </p>
       <p className="relative mt-8 text-lg font-medium tracking-tight text-white">
-        {SITE.contactEmail}
+        <a
+          href={`mailto:${SITE.contactEmail}`}
+          className="cursor-text select-all select-text"
+        >
+          {SITE.contactEmail}
+        </a>
       </p>
     </section>
   );

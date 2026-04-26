@@ -11,27 +11,27 @@ export const roadmap: Milestone[] = [
   {
     id: "m1",
     phase: "01",
-    title: "Charter & tooling",
+    title: "Charter & Tooling",
     description:
-      "EDA access, repo setup, and a shared verification flow.",
+      "Secure industry-grade EDA stack and establish versioned RTL and verification infrastructure.",
     date: "Spring 2026",
     done: false,
   },
   {
     id: "m2",
     phase: "02",
-    title: "Architecture lock",
+    title: "Architecture Lock",
     description:
-      "Pick the workload, freeze the microarchitecture, draft the spec.",
+      "Define target workloads, finalize microarchitecture, and lock the system-level specification.",
     date: "Fall 2026",
     done: false,
   },
   {
     id: "m3",
     phase: "03",
-    title: "RTL freeze",
+    title: "RTL Freeze",
     description:
-      "Feature-complete inference accelerator with DV signoff.",
+      "Feature-complete accelerator RTL with full design verification signoff.",
     date: "Spring 2027",
     done: false,
   },
@@ -40,7 +40,7 @@ export const roadmap: Milestone[] = [
     phase: "04",
     title: "Tapeout",
     description:
-      "GDSII out the door. LVS and DRC clean on TSMC 16 nm.",
+      "GDSII submission with LVS and DRC clean on TSMC 16nm.",
     date: "TBD",
     done: false,
   },
@@ -48,7 +48,8 @@ export const roadmap: Milestone[] = [
     id: "m5",
     phase: "05",
     title: "Bring-up",
-    description: "Packaged silicon on the bench. First inference.",
+    description:
+      "Silicon validation, board-level bring-up, and first on-chip inference.",
     date: "Post-silicon",
     done: false,
   },
