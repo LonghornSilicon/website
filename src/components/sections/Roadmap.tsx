@@ -5,7 +5,7 @@ import { cn } from "@/lib/cn";
 export function Roadmap() {
   return (
     <section
-      className="bg-bg text-ink px-6 pt-12 pb-24 text-center md:pt-16 md:pb-32"
+      className="bg-bg text-ink scroll-mt-16 px-6 py-24 text-center md:scroll-mt-[72px] md:py-32"
       id="roadmap"
     >
       <div className="mx-auto max-w-[980px] text-center">
