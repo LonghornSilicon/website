@@ -12,6 +12,14 @@ export type Sponsor =
 export const sponsors: Sponsor[] = [
   {
     kind: "logo",
+    name: "Cadence",
+    src: "/sponsors/cadence.jpg",
+    width: 1024,
+    height: 256,
+    href: "https://www.cadence.com",
+  },
+  {
+    kind: "logo",
     name: "Laboratory for Computer Architecture",
     src: "/sponsors/lca.jpg",
     width: 500,

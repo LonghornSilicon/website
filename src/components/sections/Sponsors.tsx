@@ -19,7 +19,7 @@ export function Sponsors() {
       </div>
 
       {logos.length > 0 ? (
-        <div className="mx-auto mb-14 flex max-w-[900px] flex-wrap items-center justify-center gap-6 md:gap-10">
+        <div className="mx-auto mb-14 flex max-w-[1200px] flex-wrap items-center justify-center gap-4 md:flex-nowrap md:gap-6">
           {logos.map((logo) => {
             if (logo.kind !== "logo") return null;
             const image = (
