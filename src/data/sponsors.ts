@@ -32,6 +32,7 @@ export const sponsors: Sponsor[] = [
     src: "/sponsors/bronco-ai.jpg",
     width: 1024,
     height: 512,
+    href: "https://www.bronco.ai/",
   },
   {
     kind: "logo",
