@@ -19,23 +19,36 @@ export function Sponsors() {
       </div>
 
       {logos.length > 0 ? (
-        <div className="mx-auto mb-14 flex max-w-[1200px] flex-wrap items-center justify-center gap-4 md:flex-nowrap md:gap-6">
+        <div className="mx-auto mb-14 grid max-w-[1080px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {logos.map((logo) => {
             if (logo.kind !== "logo") return null;
+            const isBronco = logo.name === "Bronco AI";
+            const isLca = logo.name === "Laboratory for Computer Architecture";
+            let imageClassName =
+              "max-h-12 w-auto max-w-full object-contain md:max-h-14";
+
+            if (isBronco) {
+              imageClassName =
+                "max-h-[4.5rem] w-auto max-w-full object-contain md:max-h-20";
+            } else if (isLca) {
+              imageClassName =
+                "max-h-14 w-auto max-w-full object-contain md:max-h-16";
+            }
+
             const image = (
               <Image
                 src={logo.src}
                 alt={logo.name}
                 width={logo.width}
                 height={logo.height}
-                className="h-10 w-auto object-contain md:h-12"
-                sizes="(max-width: 768px) 40vw, 220px"
+                className={imageClassName}
+                sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 220px"
                 unoptimized
               />
             );
 
             const wrapperClass =
-              "reveal inline-flex items-center justify-center rounded-card border border-border bg-surface px-5 py-3 shadow-card transition-all duration-300 hover:-translate-y-[2px] hover:border-accent/40 hover:shadow-elevated";
+              "reveal flex h-24 w-full items-center justify-center rounded-card border border-border bg-surface px-4 py-3 shadow-card transition-all duration-300 hover:-translate-y-[2px] hover:border-accent/40 hover:shadow-elevated md:h-28";
 
             return logo.href ? (
               <a
