@@ -42,4 +42,12 @@ export const sponsors: Sponsor[] = [
     height: 80,
     href: "https://lca.ece.utexas.edu",
   },
+  {
+    kind: "logo",
+    name: "Sigmantic AI",
+    src: "/sponsors/SigmanticAIOfficial.png",
+    width: 1254,
+    height: 1254,
+    href: "https://www.sigmanticai.com/",
+  },
 ];

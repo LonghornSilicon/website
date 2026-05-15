@@ -19,11 +19,12 @@ export function Sponsors() {
       </div>
 
       {logos.length > 0 ? (
-        <div className="mx-auto mb-14 grid max-w-[1080px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto mb-14 flex max-w-[1080px] flex-wrap justify-center gap-4">
           {logos.map((logo) => {
             if (logo.kind !== "logo") return null;
             const isBronco = logo.name === "Bronco AI";
             const isLca = logo.name === "Laboratory for Computer Architecture";
+            const isSigmantic = logo.name === "Sigmantic AI";
             let imageClassName =
               "max-h-12 w-auto max-w-full object-contain md:max-h-14";
 
@@ -33,6 +34,9 @@ export function Sponsors() {
             } else if (isLca) {
               imageClassName =
                 "max-h-14 w-auto max-w-full object-contain md:max-h-16";
+            } else if (isSigmantic) {
+              imageClassName =
+                "max-h-[4.5rem] w-auto max-w-full object-contain md:max-h-20";
             }
 
             const image = (
@@ -48,7 +52,7 @@ export function Sponsors() {
             );
 
             const wrapperClass =
-              "reveal flex h-24 w-full items-center justify-center rounded-card border border-border bg-surface px-4 py-3 shadow-card transition-all duration-300 hover:-translate-y-[2px] hover:border-accent/40 hover:shadow-elevated md:h-28";
+              "reveal flex h-24 w-full items-center justify-center rounded-card border border-border bg-surface px-4 py-3 shadow-card transition-all duration-300 hover:-translate-y-[2px] hover:border-accent/40 hover:shadow-elevated sm:w-[calc(50%-0.5rem)] md:h-28 lg:w-[calc(25%-0.75rem)]";
 
             return logo.href ? (
               <a
