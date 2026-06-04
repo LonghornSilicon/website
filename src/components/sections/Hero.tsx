@@ -1,8 +1,21 @@
+import Image from "next/image";
 import { Button } from "@/components/primitives/Button";
+import { Marquee } from "@/components/ui/marquee";
+import { RetroGrid } from "@/components/ui/retro-grid";
+import { sponsors } from "@/data/sponsors";
+
+const logoSponsors = sponsors.filter((s) => s.kind === "logo");
 
 export function Hero() {
   return (
     <section className="bg-bg relative isolate flex min-h-[calc(100svh-4rem)] flex-col overflow-hidden md:min-h-[calc(100svh-4.5rem)]">
+      <RetroGrid
+        className="-z-10"
+        angle={65}
+        cellSize={60}
+        opacity={0.55}
+        lightLineColor="rgba(191,87,0,0.4)"
+      />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10"
@@ -47,6 +60,42 @@ export function Hero() {
           >
             Check us out
           </Button>
+        </div>
+
+        <div
+          className="animate-fade-up mt-14 w-full max-w-2xl sm:mt-16"
+          style={{ animationDelay: "0.34s" }}
+        >
+          <p className="mb-5 text-center font-mono text-[11px] uppercase tracking-[0.12em] text-ink-muted/60">
+            Supported by
+          </p>
+          <div className="relative">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-bg to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-bg to-transparent" />
+            <Marquee className="[--duration:22s] [--gap:2.5rem]">
+              {logoSponsors.map((logo) =>
+                logo.kind === "logo" ? (
+                  <a
+                    key={logo.name}
+                    href={logo.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={logo.name}
+                    className="flex items-center opacity-50 grayscale transition-all duration-300 hover:opacity-90 hover:grayscale-0"
+                  >
+                    <Image
+                      src={logo.src}
+                      alt={logo.name}
+                      width={logo.width}
+                      height={logo.height}
+                      className="max-h-8 w-auto max-w-[100px] object-contain"
+                      unoptimized
+                    />
+                  </a>
+                ) : null,
+              )}
+            </Marquee>
+          </div>
         </div>
       </div>
     </section>
