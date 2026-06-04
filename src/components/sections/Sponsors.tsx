@@ -1,11 +1,50 @@
 import Image from "next/image";
 import { sponsors } from "@/data/sponsors";
 import { SectionHeading } from "@/components/primitives/SectionHeading";
+import { Marquee } from "@/components/ui/marquee";
+
+function SponsorCard({
+  sponsor,
+}: {
+  sponsor: (typeof sponsors)[number];
+}) {
+  const cardClass =
+    "flex h-20 w-44 shrink-0 items-center justify-center rounded-card border border-border bg-surface px-4 py-3 shadow-card transition-all duration-300 hover:-translate-y-[2px] hover:border-accent/40 hover:shadow-elevated";
+
+  const inner =
+    sponsor.kind === "logo" ? (
+      <Image
+        src={sponsor.src}
+        alt={sponsor.name}
+        width={sponsor.width}
+        height={sponsor.height}
+        className="max-h-12 w-auto max-w-[140px] object-contain"
+        unoptimized
+      />
+    ) : (
+      <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-muted">
+        {sponsor.name}
+      </span>
+    );
+
+  if (sponsor.kind === "logo" && sponsor.href) {
+    return (
+      <a
+        href={sponsor.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={sponsor.name}
+        className={cardClass}
+      >
+        {inner}
+      </a>
+    );
+  }
+
+  return <div className={cardClass}>{inner}</div>;
+}
 
 export function Sponsors() {
-  const logos = sponsors.filter((s) => s.kind === "logo");
-  const names = sponsors.filter((s) => s.kind === "text");
-
   return (
     <section
       className="bg-surface px-6 py-24 text-center text-ink md:py-32"
@@ -18,80 +57,16 @@ export function Sponsors() {
         </SectionHeading>
       </div>
 
-      {logos.length > 0 ? (
-        <div className="mx-auto mb-14 flex max-w-[1080px] flex-wrap justify-center gap-4">
-          {logos.map((logo) => {
-            if (logo.kind !== "logo") return null;
-            const isBronco = logo.name === "Bronco AI";
-            const isLca = logo.name === "Laboratory for Computer Architecture";
-            const isSigmantic = logo.name === "Sigmantic AI";
-            let imageClassName =
-              "max-h-12 w-auto max-w-full object-contain md:max-h-14";
+      <div className="relative mx-auto max-w-[1200px]">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-surface to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-surface to-transparent" />
 
-            if (isBronco) {
-              imageClassName =
-                "max-h-[4.5rem] w-auto max-w-full object-contain md:max-h-20";
-            } else if (isLca) {
-              imageClassName =
-                "max-h-14 w-auto max-w-full object-contain md:max-h-16";
-            } else if (isSigmantic) {
-              imageClassName =
-                "max-h-[4.5rem] w-auto max-w-full object-contain md:max-h-20";
-            }
-
-            const image = (
-              <Image
-                src={logo.src}
-                alt={logo.name}
-                width={logo.width}
-                height={logo.height}
-                className={imageClassName}
-                sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 220px"
-                unoptimized
-              />
-            );
-
-            const wrapperClass =
-              "reveal flex h-24 w-full items-center justify-center rounded-card border border-border bg-surface px-4 py-3 shadow-card transition-all duration-300 hover:-translate-y-[2px] hover:border-accent/40 hover:shadow-elevated sm:w-[calc(50%-0.5rem)] md:h-28 lg:w-[calc(25%-0.75rem)]";
-
-            return logo.href ? (
-              <a
-                key={logo.name}
-                href={logo.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={logo.name}
-                className={wrapperClass}
-              >
-                {image}
-              </a>
-            ) : (
-              <div
-                key={logo.name}
-                aria-label={logo.name}
-                className={wrapperClass}
-              >
-                {image}
-              </div>
-            );
-          })}
-        </div>
-      ) : null}
-
-      {names.length > 0 ? (
-        <div className="mx-auto flex max-w-[900px] flex-wrap items-center justify-center gap-x-16 gap-y-10">
-          {names.map((s) =>
-            s.kind === "text" ? (
-              <span
-                key={s.name}
-                className="reveal font-mono text-[13px] uppercase tracking-[0.1em] text-ink-muted transition-colors hover:text-accent"
-              >
-                {s.name}
-              </span>
-            ) : null,
-          )}
-        </div>
-      ) : null}
+        <Marquee className="[--duration:28s]">
+          {sponsors.map((sponsor) => (
+            <SponsorCard key={sponsor.name} sponsor={sponsor} />
+          ))}
+        </Marquee>
+      </div>
     </section>
   );
 }
