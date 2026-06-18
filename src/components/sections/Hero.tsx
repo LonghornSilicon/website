@@ -88,7 +88,11 @@ export function Hero() {
                       alt={logo.name}
                       width={logo.width}
                       height={logo.height}
-                      className="max-h-8 w-auto max-w-[100px] object-contain"
+                      className={
+                        logo.name === "ChipAgents"
+                          ? "max-h-11 w-auto max-w-[140px] object-contain"
+                          : "max-h-8 w-auto max-w-[100px] object-contain"
+                      }
                       unoptimized
                     />
                   </a>

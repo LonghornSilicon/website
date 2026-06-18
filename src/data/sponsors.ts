@@ -7,6 +7,8 @@ export type Sponsor =
       width: number;
       height: number;
       href?: string;
+      /** Optional Tailwind override for the rendered logo size (e.g. logos with extra whitespace). */
+      imgClassName?: string;
     };
 
 export const sponsors: Sponsor[] = [
@@ -26,6 +28,7 @@ export const sponsors: Sponsor[] = [
     width: 480,
     height: 280,
     href: "https://chipagents.ai",
+    imgClassName: "max-h-16 w-auto max-w-[210px] object-contain",
   },
   {
     kind: "logo",

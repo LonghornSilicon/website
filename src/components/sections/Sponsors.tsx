@@ -18,7 +18,9 @@ function SponsorCard({
         alt={sponsor.name}
         width={sponsor.width}
         height={sponsor.height}
-        className="max-h-12 w-auto max-w-[140px] object-contain"
+        className={
+          sponsor.imgClassName ?? "max-h-12 w-auto max-w-[140px] object-contain"
+        }
         unoptimized
       />
     ) : (
