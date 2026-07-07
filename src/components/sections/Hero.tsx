@@ -43,8 +43,8 @@ export function Hero() {
           className="animate-fade-up text-ink-muted mx-auto mt-7 max-w-xl text-center text-lg leading-relaxed md:mt-8 md:text-xl"
           style={{ animationDelay: "0.2s" }}
         >
-          First student silicon team at UT Austin, taping out an AI inference
-          accelerator on TSMC 16nm.
+          First student silicon team at UT Austin, designing an AI inference
+          accelerator targeting TSMC 16nm.
         </p>
 
         <div

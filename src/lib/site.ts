@@ -5,6 +5,6 @@ export const SITE = {
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
     "https://longhornsilicon.org",
   description:
-    "Longhorn Silicon is a student-led chip design club at The University of Texas at Austin. We design, tape out, and bring up custom silicon.",
+    "Longhorn Silicon is a student-led chip design club at The University of Texas at Austin. We design and verify custom silicon, working toward our first tape-out.",
   contactEmail: "info@longhornsilicon.com",
 } as const;

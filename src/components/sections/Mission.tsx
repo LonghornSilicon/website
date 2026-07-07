@@ -115,19 +115,19 @@ export function Mission() {
             className="reveal min-h-[140px] md:col-span-3"
             eyebrow="Flagship"
             title={<span className="block">Introducing Lambda.</span>}
-            description="Longhorn Accelerator for Matrix-Based Dataflow & Attention. Powering AI models up to 200M parameters"
+            description="Longhorn Accelerator for Matrix-Based Dataflow & Attention. Powering AI models up to 1.5B parameters"
             pattern
           />
           <BentoCard
             className="reveal min-h-[140px] md:col-span-3 md:col-start-4"
             eyebrow="Tapeout"
-            title="Real silicon. Real packages."
-            description="Tapeouts via TSMC University FinFET Program with imec."
+            title="Built for real silicon."
+            description="Targeting tapeout via the TSMC University FinFET Program with imec."
           />
           <BentoCard
             className="reveal min-h-[140px] md:col-span-2 md:col-start-1 md:row-start-2"
             eyebrow="FRONTEND"
-            title="SystemVerilog · UVM"
+            title="SystemVerilog · Formal"
           />
           <BentoCard
             className="reveal min-h-[140px] md:col-span-2 md:col-start-3 md:row-start-2"

@@ -41,7 +41,7 @@ export const roadmap: Milestone[] = [
     title: "Tapeout",
     description:
       "GDSII submission with LVS and DRC clean on TSMC 16nm.",
-    date: "TBD",
+    date: "Summer 2027",
     done: false,
   },
   {
