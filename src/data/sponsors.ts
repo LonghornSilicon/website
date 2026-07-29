@@ -12,6 +12,31 @@ export type Sponsor =
     };
 
 export const sponsors: Sponsor[] = [
+  // Established industry — lead the marquee so these are visible on first entry.
+  {
+    kind: "logo",
+    name: "Cadence",
+    src: "/sponsors/cadence.png",
+    width: 1200,
+    height: 300,
+    href: "https://www.cadence.com",
+  },
+  {
+    kind: "logo",
+    name: "Synopsys",
+    src: "/sponsors/synopsys_logo.svg_.webp",
+    width: 1280,
+    height: 290,
+    href: "https://www.synopsys.com",
+  },
+  {
+    kind: "logo",
+    name: "Silicon Labs",
+    src: "/sponsors/Silicon_Labs_2015.svg.png",
+    width: 1280,
+    height: 659,
+    href: "https://www.silabs.com",
+  },
   // Startups
   {
     kind: "logo",
@@ -45,31 +70,6 @@ export const sponsors: Sponsor[] = [
     width: 1254,
     height: 1254,
     href: "https://www.sigmanticai.com/",
-  },
-  // Established industry
-  {
-    kind: "logo",
-    name: "Cadence",
-    src: "/sponsors/cadence.png",
-    width: 1200,
-    height: 300,
-    href: "https://www.cadence.com",
-  },
-  {
-    kind: "logo",
-    name: "Synopsys",
-    src: "/sponsors/synopsys_logo.svg_.webp",
-    width: 1280,
-    height: 290,
-    href: "https://www.synopsys.com",
-  },
-  {
-    kind: "logo",
-    name: "Silicon Labs",
-    src: "/sponsors/Silicon_Labs_2015.svg.png",
-    width: 1280,
-    height: 659,
-    href: "https://www.silabs.com",
   },
   // Labs
   {
