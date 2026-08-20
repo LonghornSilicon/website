@@ -101,7 +101,7 @@ export function Mission() {
     >
       <div className="mx-auto max-w-[1200px]">
         <div className="mx-auto max-w-[980px] text-center">
-          <SectionHeading className="reveal mb-20 text-ink md:mb-24">
+          <SectionHeading className="reveal text-ink mb-20 md:mb-24">
             Silicon is the new frontier.{" "}
             <span className="text-ink-muted">
               We&apos;re training people who&apos;ll shape it.
@@ -141,20 +141,22 @@ export function Mission() {
           />
           <div
             className={cn(
-              "reveal rounded-card hover:shadow-elevated border-border bg-bg text-ink shadow-card relative overflow-hidden border p-1 text-left transition-all duration-300 hover:-translate-y-[2px] hover:border-accent/40 md:p-1",
+              "reveal rounded-card hover:shadow-elevated border-border bg-bg text-ink shadow-card hover:border-accent/40 relative overflow-hidden border p-5 text-left transition-all duration-300 hover:-translate-y-[2px] md:p-6",
               "md:col-span-6 md:row-start-3",
             )}
           >
-            <div className="text-accent mb-0.5 pt-4 pl-4 text-[12px] font-medium tracking-[0.06em] uppercase">
+            <div className="text-accent mb-2 text-[12px] font-medium tracking-[0.06em] uppercase">
               Vision
             </div>
-            <div className="bg-bg relative aspect-[1024/310] w-full overflow-hidden rounded-md">
+            {/* The module occupies 1456x408 of the PNG's 1568x687 canvas; this
+                aspect crops the transparent padding so the card stays tight. */}
+            <div className="relative mx-auto aspect-[1456/408] w-full max-w-[640px] overflow-hidden">
               <Image
-                src="/brand/pcie-vision2.png"
+                src="/brand/vision.png"
                 alt="Longhorn Silicon Lambda M.2 module with silver heat spreader and LPDDR DRAM"
                 fill
                 className="object-cover object-center"
-                sizes="(max-width: 768px) 100vw, min(1120px, 100vw)"
+                sizes="(max-width: 768px) 100vw, 640px"
               />
             </div>
           </div>

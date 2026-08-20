@@ -31,6 +31,16 @@ export const sponsors: Sponsor[] = [
   },
   {
     kind: "logo",
+    name: "Amazon Web Services",
+    src: "/sponsors/aws.webp",
+    width: 1280,
+    height: 767,
+    href: "https://aws.amazon.com",
+    // Tall wordmark + smile: give it the full card height so it doesn't read small.
+    imgClassName: "max-h-14 w-auto max-w-[110px] object-contain",
+  },
+  {
+    kind: "logo",
     name: "Silicon Labs",
     src: "/sponsors/Silicon_Labs_2015.svg.png",
     width: 1280,

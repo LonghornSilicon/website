@@ -46,8 +46,8 @@ export const metadata: Metadata = {
     description: SITE.description,
   },
   icons: {
-    icon: "/brand/logo.png",
-    apple: "/brand/logo.png",
+    icon: "/brand/logo-1.png",
+    apple: "/brand/logo-1.png",
   },
 };
 

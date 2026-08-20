@@ -68,12 +68,14 @@ export function Navigation() {
           className="text-ink relative z-10 inline-flex shrink-0 items-center gap-2 text-[15px] font-semibold tracking-tight md:text-base"
           aria-label={`${SITE.name} home`}
         >
+          {/* logo-1.png carries ~13% transparent padding of its own, so the box
+              is 32px to land the mark at the same optical size as the old 28px logo. */}
           <Image
-            src="/brand/logo.png"
+            src="/brand/logo-1.png"
             alt=""
-            width={28}
-            height={28}
-            className="h-7 w-7 object-contain"
+            width={32}
+            height={32}
+            className="h-8 w-8 object-contain"
             priority
           />
           {SITE.name}
