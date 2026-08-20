@@ -1,3 +1,4 @@
+import { Button } from "@/components/primitives/Button";
 import { SITE } from "@/lib/site";
 
 export function FinalCTA() {
@@ -17,7 +18,19 @@ export function FinalCTA() {
         We&apos;re looking for intrinsically motivated, intelligent students,
         plus industry partners and faculty willing to support.
       </p>
-      <p className="relative mt-8 text-lg font-medium tracking-tight text-white">
+      <div className="relative mt-10 flex justify-center">
+        <Button
+          href={SITE.applyUrl}
+          variant="secondary"
+          size="lg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Apply now
+        </Button>
+      </div>
+
+      <p className="relative mt-7 text-lg font-medium tracking-tight text-white">
         <a
           href={`mailto:${SITE.contactEmail}`}
           className="cursor-text select-all select-text"

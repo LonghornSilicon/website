@@ -94,6 +94,15 @@ export function Navigation() {
         </nav>
 
         <div className="relative z-10 hidden md:flex md:items-center md:gap-2">
+          <Button
+            href={SITE.applyUrl}
+            variant="secondary"
+            size="sm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Apply now
+          </Button>
           <Button href="#contact" variant="primary" size="sm">
             Contact
           </Button>
@@ -124,10 +133,21 @@ export function Navigation() {
               </a>
             ))}
             <Button
+              href={SITE.applyUrl}
+              variant="secondary"
+              size="md"
+              className="mt-4 w-full"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+            >
+              Apply now
+            </Button>
+            <Button
               href="#contact"
               variant="primary"
               size="md"
-              className="mt-4 w-full"
+              className="mt-2 w-full"
               onClick={() => setMobileOpen(false)}
             >
               Contact
