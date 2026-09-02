@@ -67,14 +67,6 @@ export const sponsors: Sponsor[] = [
   },
   {
     kind: "logo",
-    name: "Etched",
-    src: "/sponsors/etched-ai.png",
-    width: 296,
-    height: 170,
-    href: "https://www.etched.com",
-  },
-  {
-    kind: "logo",
     name: "Sigmantic AI",
     src: "/sponsors/SigmanticAIOfficial.png",
     width: 1254,
