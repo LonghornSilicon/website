@@ -41,6 +41,24 @@ export const sponsors: Sponsor[] = [
   },
   {
     kind: "logo",
+    name: "Arm",
+    src: "/sponsors/arm.svg",
+    width: 4332,
+    height: 1319,
+    href: "https://www.arm.com",
+    // Short, wide wordmark: cap height so it sits level with its neighbors.
+    imgClassName: "max-h-7 w-auto max-w-[88px] object-contain",
+  },
+  {
+    kind: "logo",
+    name: "Hudson River Trading",
+    src: "/sponsors/hrt.png",
+    width: 721,
+    height: 420,
+    href: "https://www.hudsonrivertrading.com",
+  },
+  {
+    kind: "logo",
     name: "Silicon Labs",
     src: "/sponsors/Silicon_Labs_2015.svg.png",
     width: 1280,
