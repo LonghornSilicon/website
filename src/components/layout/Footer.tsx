@@ -20,6 +20,14 @@ export function Footer() {
           >
             GitHub
           </a>
+          <a
+            href="https://www.linkedin.com/company/longhorn-silicon"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white"
+          >
+            LinkedIn
+          </a>
           <a href={`mailto:${SITE.contactEmail}`} className="hover:text-white">
             {SITE.contactEmail}
           </a>
