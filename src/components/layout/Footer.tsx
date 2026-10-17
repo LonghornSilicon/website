@@ -1,9 +1,29 @@
+import Link from "next/link";
 import { SITE } from "@/lib/site";
 
 export function Footer() {
   return (
     <footer className="bg-[#141414] px-6 pt-8 pb-8 text-[13px] text-white/60">
       <div className="mx-auto max-w-[1200px]">
+        <nav
+          aria-label="Footer"
+          className="mb-6 flex flex-wrap gap-x-6 gap-y-2 text-[13px] text-white/70"
+        >
+          <Link href="/newsletter" className="hover:text-white">
+            Newsletter
+          </Link>
+          <a
+            href="https://github.com/LonghornSilicon/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white"
+          >
+            GitHub
+          </a>
+          <a href={`mailto:${SITE.contactEmail}`} className="hover:text-white">
+            {SITE.contactEmail}
+          </a>
+        </nav>
         <div className="flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
           <span>
             © {new Date().getFullYear()} {SITE.name}

@@ -22,8 +22,8 @@
   --shadow-elevated: 0 8px 32px rgba(0, 0, 0, 0.08);
 
   --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui,
-    sans-serif;
+  --font-display:
+    var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   --ease-apple: cubic-bezier(0.28, 0.11, 0.32, 1);
@@ -34,8 +34,12 @@
 }
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(calc(-100% - var(--gap, 1.5rem))); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap, 1.5rem)));
+  }
 }
 
 @layer base {
@@ -124,5 +128,103 @@
       black 40%,
       transparent 80%
     );
+  }
+}
+
+/* ---- Newsletter (web edition) ---- */
+@layer components {
+  /* Home-page photo collage. Mobile: 2 columns, the anchor photo spans both. */
+  .collage {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "a a"
+      "b c"
+      "d d"
+      "e e";
+  }
+  .collage-a {
+    grid-area: a;
+  }
+  .collage-b {
+    grid-area: b;
+  }
+  .collage-c {
+    grid-area: c;
+  }
+  .collage-d {
+    grid-area: d;
+  }
+  .collage-e {
+    grid-area: e;
+  }
+  .collage > li {
+    aspect-ratio: 4 / 3;
+  }
+  .collage > .collage-d,
+  .collage > .collage-e {
+    aspect-ratio: 16 / 7;
+  }
+  @media (min-width: 768px) {
+    .collage {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      grid-auto-rows: 200px;
+      grid-template-areas:
+        "a a b b c c"
+        "a a d d d e";
+    }
+    .collage > li,
+    .collage > .collage-d,
+    .collage > .collage-e {
+      aspect-ratio: auto;
+    }
+  }
+  @media (min-width: 1024px) {
+    .collage {
+      grid-auto-rows: 250px;
+    }
+  }
+
+  /* Long-form article text on issue pages. */
+  .issue-prose {
+    @apply text-ink text-[17px] leading-[1.6];
+  }
+  .issue-prose > * + * {
+    margin-top: 1.1em;
+  }
+  .issue-prose h3 {
+    @apply font-display text-[21px] leading-[1.25] font-semibold tracking-[-0.015em];
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+  }
+  .issue-prose h3:first-child {
+    margin-top: 0;
+  }
+  .issue-prose h3 + * {
+    margin-top: 0;
+  }
+  .issue-prose ul,
+  .issue-prose ol {
+    padding-left: 1.3em;
+  }
+  .issue-prose ul {
+    list-style: disc;
+  }
+  .issue-prose ol {
+    list-style: decimal;
+  }
+  .issue-prose li + li {
+    margin-top: 0.45em;
+  }
+  .issue-prose li::marker {
+    color: var(--color-accent);
+  }
+  .issue-prose strong {
+    @apply font-semibold;
+  }
+  .issue-prose a {
+    @apply text-accent underline decoration-[1.5px] underline-offset-4;
+  }
+  .issue-prose em {
+    font-style: italic;
   }
 }

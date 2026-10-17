@@ -64,7 +64,7 @@ export function Navigation() {
     >
       <div className="relative mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 md:h-[72px]">
         <Link
-          href="#top"
+          href="/"
           className="text-ink relative z-10 inline-flex shrink-0 items-center gap-2 text-[15px] font-semibold tracking-tight md:text-base"
           aria-label={`${SITE.name} home`}
         >
@@ -83,13 +83,13 @@ export function Navigation() {
 
         <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-9 md:flex">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href + link.label}
               href={link.href}
               className="text-ink/80 hover:text-ink text-sm transition-colors"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -103,7 +103,7 @@ export function Navigation() {
           >
             Apply now
           </Button>
-          <Button href="#contact" variant="primary" size="sm">
+          <Button href="/#contact" variant="primary" size="sm">
             Contact
           </Button>
         </div>
@@ -123,14 +123,14 @@ export function Navigation() {
         <div className="border-border bg-surface border-t md:hidden">
           <nav className="mx-auto flex max-w-[1200px] flex-col gap-1 px-6 py-6">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href + link.label}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
                 className="text-ink py-3 text-base"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <Button
               href={SITE.applyUrl}
@@ -144,7 +144,7 @@ export function Navigation() {
               Apply now
             </Button>
             <Button
-              href="#contact"
+              href="/#contact"
               variant="primary"
               size="md"
               className="mt-2 w-full"

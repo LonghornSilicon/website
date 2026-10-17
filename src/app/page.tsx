@@ -1,4 +1,5 @@
 import { ScrollReveal } from "@/components/primitives/ScrollReveal";
+import { AroundTheOrg } from "@/components/sections/AroundTheOrg";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Hero } from "@/components/sections/Hero";
 import { Mission } from "@/components/sections/Mission";
@@ -12,6 +13,7 @@ export default function HomePage() {
       <ScrollReveal>
         <Mission />
         <Teams />
+        <AroundTheOrg />
         <Sponsors />
         <FinalCTA />
       </ScrollReveal>

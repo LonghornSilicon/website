@@ -45,5 +45,12 @@ Environment variables are optional for this static marketing site.
 
 - `src/app/` — routes, layout, global styles, OG image, favicon
 - `src/components/` — layout, sections, primitives, visuals
-- `src/data/` — nav, teams, sponsors (content)
+- `src/data/` — nav, teams, sponsors, newsletter issues (content)
 - `src/lib/` — site constants and `cn()` helper
+
+## Adding a newsletter issue
+
+1. Put the photos and the PDF export in `public/newsletter/<yyyy-mm>/`.
+2. Describe the issue (title, summary, cover, photos) in `src/data/newsletters/<yyyy-mm>.ts`.
+3. Build the page at `src/app/newsletter/<yyyy-mm>/page.tsx` using the parts in `src/components/newsletter/IssueParts.tsx` (the September 2026 issue is the template).
+4. Add the issue to the top of the list in `src/data/newsletters.ts`. The archive at `/newsletter` and the home-page link pick it up from there.
