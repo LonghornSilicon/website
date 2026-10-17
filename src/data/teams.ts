@@ -34,4 +34,11 @@ export const teams: Team[] = [
     description:
       "Synthesis through place-and-route, with timing, DRC, and LVS signoff.",
   },
+  {
+    id: "inference",
+    index: "05",
+    name: "Inference",
+    description:
+      "Quantization, kernels, and profiling to fit small LLMs on the chip and run them fast.",
+  },
 ];
