@@ -12,10 +12,10 @@ export const photos = {
   },
   cohort: {
     src: `${dir}/cohort-eer-stairs.jpg`,
-    alt: "Around fifty students posing on the EER stairs, holding up the Hook 'em sign",
+    alt: "The Longhorn Silicon group posing on the EER stairs, holding up the Hook 'em sign",
     width: 1440,
     height: 1225,
-    caption: "The first cohort, September 2026.",
+    caption: "The Longhorn Silicon group.",
   },
   generalMeeting: {
     src: `${dir}/general-meeting.jpg`,
@@ -41,10 +41,10 @@ export const photos = {
   },
   rtl: {
     src: `${dir}/rtl-team.jpg`,
-    alt: "Eleven RTL team members standing together in a classroom, several holding up the Hook 'em sign",
+    alt: "The Longhorn Silicon leads standing together in a classroom, several holding up the Hook 'em sign",
     width: 1800,
     height: 930,
-    caption: "The RTL team.",
+    caption: "The Longhorn Silicon leads.",
   },
   dv: {
     src: `${dir}/dv-team.jpg`,
