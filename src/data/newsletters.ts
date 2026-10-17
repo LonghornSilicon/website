@@ -9,7 +9,7 @@ export type Photo = {
 };
 
 export type NewsletterIssue = {
-  /** URL segment under /newsletter, e.g. "2026-09" */
+  /** Folder name under /public/newsletter, e.g. "2026-09" */
   slug: string;
   number: number;
   /** Cover line for the issue, e.g. "September 2026" */
@@ -25,15 +25,15 @@ export type NewsletterIssue = {
 };
 
 /**
- * Every published issue, newest first. To add one: drop the photos and PDF
- * into /public/newsletter/<slug>/, describe the issue in
- * src/data/newsletters/<slug>.ts, build the page at
- * src/app/newsletter/<slug>/page.tsx, and add it to the top of this list.
+ * Every published issue, newest first. To add one: drop the PDF (and any
+ * photos you want on the site) into /public/newsletter/<slug>/, describe the
+ * issue in src/data/newsletters/<slug>.ts, and add it to the top of this list.
  */
 export const issues: NewsletterIssue[] = [september2026];
 
 export const latestIssue = issues[0];
 
+/** Issues are read as the PDF itself; this is the link to open one. */
 export function issuePath(issue: NewsletterIssue) {
-  return `/newsletter/${issue.slug}`;
+  return issue.pdf;
 }

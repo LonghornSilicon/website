@@ -183,48 +183,4 @@
       grid-auto-rows: 250px;
     }
   }
-
-  /* Long-form article text on issue pages. */
-  .issue-prose {
-    @apply text-ink text-[17px] leading-[1.6];
-  }
-  .issue-prose > * + * {
-    margin-top: 1.1em;
-  }
-  .issue-prose h3 {
-    @apply font-display text-[21px] leading-[1.25] font-semibold tracking-[-0.015em];
-    margin-top: 2em;
-    margin-bottom: 0.5em;
-  }
-  .issue-prose h3:first-child {
-    margin-top: 0;
-  }
-  .issue-prose h3 + * {
-    margin-top: 0;
-  }
-  .issue-prose ul,
-  .issue-prose ol {
-    padding-left: 1.3em;
-  }
-  .issue-prose ul {
-    list-style: disc;
-  }
-  .issue-prose ol {
-    list-style: decimal;
-  }
-  .issue-prose li + li {
-    margin-top: 0.45em;
-  }
-  .issue-prose li::marker {
-    color: var(--color-accent);
-  }
-  .issue-prose strong {
-    @apply font-semibold;
-  }
-  .issue-prose a {
-    @apply text-accent underline decoration-[1.5px] underline-offset-4;
-  }
-  .issue-prose em {
-    font-style: italic;
-  }
 }

@@ -21,14 +21,14 @@ If you use pnpm: `pnpm install` / `pnpm dev` (same scripts).
 
 ## Scripts
 
-| Command           | Description              |
-| ----------------- | ------------------------ |
-| `npm run dev`     | Dev server (Turbopack)   |
-| `npm run build`   | Production build         |
-| `npm run start`   | Run production server    |
-| `npm run lint`    | ESLint                   |
-| `npm run typecheck` | TypeScript (no emit)   |
-| `npm run format`  | Prettier + Tailwind sort |
+| Command             | Description              |
+| ------------------- | ------------------------ |
+| `npm run dev`       | Dev server (Turbopack)   |
+| `npm run build`     | Production build         |
+| `npm run start`     | Run production server    |
+| `npm run lint`      | ESLint                   |
+| `npm run typecheck` | TypeScript (no emit)     |
+| `npm run format`    | Prettier + Tailwind sort |
 
 ## Deploy on Vercel
 
@@ -50,7 +50,6 @@ Environment variables are optional for this static marketing site.
 
 ## Adding a newsletter issue
 
-1. Put the photos and the PDF export in `public/newsletter/<yyyy-mm>/`.
-2. Describe the issue (title, summary, cover, photos) in `src/data/newsletters/<yyyy-mm>.ts`.
-3. Build the page at `src/app/newsletter/<yyyy-mm>/page.tsx` using the parts in `src/components/newsletter/IssueParts.tsx` (the September 2026 issue is the template).
-4. Add the issue to the top of the list in `src/data/newsletters.ts`. The archive at `/newsletter` and the home-page link pick it up from there.
+1. Put the PDF export (and any photos you want on the site) in `public/newsletter/<yyyy-mm>/`.
+2. Describe the issue (title, summary, cover, PDF path) in `src/data/newsletters/<yyyy-mm>.ts`.
+3. Add it to the top of the list in `src/data/newsletters.ts`. The archive at `/newsletter` and the home-page button pick it up from there; clicking an issue opens the PDF.

@@ -67,7 +67,13 @@ export function AroundTheOrg() {
             specs, the road to tapeout, and who is on each team.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
-            <Button href={issuePath(latestIssue)} variant="primary" size="md">
+            <Button
+              href={issuePath(latestIssue)}
+              variant="primary"
+              size="md"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Read the {latestIssue.month.split(" ")[0]} issue
             </Button>
             <Link
