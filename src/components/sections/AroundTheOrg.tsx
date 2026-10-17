@@ -10,7 +10,7 @@ import { photos } from "@/data/newsletters/2026-09";
      a a b b c c
      a a d d d e
    a: whole cohort   b: general meeting   c: DV team
-   d: RTL workday    e: PD apprentices */
+   d: PD apprentices  e: RTL workday */
 const collage = [
   { photo: photos.cohort, area: "a", sizes: "(max-width: 768px) 100vw, 400px" },
   {
@@ -20,11 +20,15 @@ const collage = [
   },
   { photo: photos.dv, area: "c", sizes: "(max-width: 768px) 50vw, 400px" },
   {
-    photo: photos.rtlWorkday,
+    photo: photos.pd,
     area: "d",
     sizes: "(max-width: 768px) 66vw, 600px",
   },
-  { photo: photos.pd, area: "e", sizes: "(max-width: 768px) 33vw, 200px" },
+  {
+    photo: photos.rtlWorkday,
+    area: "e",
+    sizes: "(max-width: 768px) 33vw, 200px",
+  },
 ] as const;
 
 export function AroundTheOrg() {
