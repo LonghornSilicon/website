@@ -66,9 +66,9 @@ export function AroundTheOrg() {
 
         <div className="reveal mx-auto mt-12 flex max-w-[720px] flex-col items-center gap-5 text-center">
           <p className="text-[17px] leading-relaxed text-white/70">
-            Every month our teams write up what they built, what they learned,
-            and what comes next. The first issue covers September: the chip
-            specs, the road to tapeout, and who is on each team.
+            We put out a newsletter at the start of every month. The September
+            issue has the Reef specs, the schedule to tapeout, and a write-up
+            from each team on what they did.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Button
