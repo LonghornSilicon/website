@@ -8,9 +8,7 @@ export function Teams() {
       id="teams"
     >
       <div className="mx-auto max-w-[980px] text-center">
-        <SectionHeading className="reveal mb-14">
-          Teams. <span className="text-ink-muted">How the work splits.</span>
-        </SectionHeading>
+        <SectionHeading className="reveal mb-14">Teams</SectionHeading>
       </div>
 
       <ul className="border-border mx-auto max-w-[880px] list-none border-t text-left">
